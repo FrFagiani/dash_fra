@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 # import geopandas as gpd
 # from shapely import wkt
-import plotly.graph_objects as go
+import plotly.express as px
 
 st.set_page_config(layout="wide")
 st.title('How to visualize and filter dataframe')
