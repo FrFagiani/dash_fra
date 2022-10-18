@@ -91,8 +91,8 @@ dfex_col = df.loc[:, df.columns.isin(df_filtcol)]
 # Count filtered values
 dfcount = str(dfex_col.Sample.count())
 # Run in streamlit
-st.dataframe(dfex_col, height=1000)
 st.subheader('Selected cities:'+dfcount)
+st.dataframe(dfex_col, height=100)
 
 # df['geometry'] = df['geometry'].apply(wkt.loads)
 # gdf = gpd.GeoDataFrame(df, crs='WGS84')
