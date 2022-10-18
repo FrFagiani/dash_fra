@@ -4,6 +4,12 @@ import numpy as np
 # import geopandas as gpd
 # from shapely import wkt
 import plotly.express as px
+from pandas.api.types import (
+    is_categorical_dtype,
+    is_datetime64_any_dtype,
+    is_numeric_dtype,
+    is_object_dtype,
+)
 
 st.set_page_config(layout="wide")
 st.title('How to visualize and filter dataframe')
