@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 # import geopandas as gpd
-from shapely import wkt
+# from shapely import wkt
 import plotly.express as px
 
 st.set_page_config(layout="wide")
@@ -88,7 +88,7 @@ dfcount = str(dfex_col.Sample.count())
 st.dataframe(dfex_col)
 st.subheader('Selected cities:'+dfcount)
 
-df['geometry'] = df['geometry'].apply(wkt.loads)
+# df['geometry'] = df['geometry'].apply(wkt.loads)
 # gdf = gpd.GeoDataFrame(df, crs='WGS84')
 gdf = df
 
@@ -108,8 +108,8 @@ gdf = gdf.sort_values(by=[option])
 
 px.set_mapbox_access_token('pk.eyJ1IjoiZnJmYWdpYW5pIiwiYSI6ImNsOTg2Ynk3ejA1YjMzcm4xOWJ2MDgzOWgifQ.4TX3ZJWRbzz6Y0QKRahadQ')
 fig = px.scatter_mapbox(gdf,
-                        lat=gdf.geometry.y,
-                        lon=gdf.geometry.x,
+                        lat=gdf.lat,
+                        lon=gdf.lon,
                         hover_name='City',
                         color=gdf[option].astype('string'),
                         size=option,
