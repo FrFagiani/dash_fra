@@ -91,7 +91,7 @@ dfex_col = df.loc[:, df.columns.isin(df_filtcol)]
 # Count filtered values
 dfcount = str(dfex_col.Sample.count())
 # Run in streamlit
-st.dataframe(dfex_col)
+st.dataframe(dfex_col, height=1000)
 st.subheader('Selected cities:'+dfcount)
 
 # df['geometry'] = df['geometry'].apply(wkt.loads)
