@@ -112,7 +112,7 @@ option = st.selectbox(
 
 gdf = gdf.sort_values(by=[option])
 
-px.set_mapbox_access_token('pk.eyJ1IjoiZnJmYWdpYW5pIiwiYSI6ImNsOTg2Ynk3ejA1YjMzcm4xOWJ2MDgzOWgifQ.4TX3ZJWRbzz6Y0QKRahadQ')
+#px.set_mapbox_access_token('pk.eyJ1IjoiZnJmYWdpYW5pIiwiYSI6ImNsOTg2Ynk3ejA1YjMzcm4xOWJ2MDgzOWgifQ.4TX3ZJWRbzz6Y0QKRahadQ')
 fig = px.scatter_mapbox(gdf,
                         lat=gdf.lat,
                         lon=gdf.lon,
@@ -121,6 +121,7 @@ fig = px.scatter_mapbox(gdf,
                         size=option,
                         size_max=15,
                         zoom=3)
-fig.update_layout(margin={"r": 100, "t": 0, "l": 100, "b": 0})
+fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+fig.update_layout(mapbox_style="open-street-map")
 
 st.plotly_chart(fig, use_container_width=True)
