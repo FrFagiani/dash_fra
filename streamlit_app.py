@@ -112,7 +112,6 @@ option = st.selectbox(
 
 gdf = gdf.sort_values(by=[option])
 
-#px.set_mapbox_access_token('pk.eyJ1IjoiZnJmYWdpYW5pIiwiYSI6ImNsOTg2Ynk3ejA1YjMzcm4xOWJ2MDgzOWgifQ.4TX3ZJWRbzz6Y0QKRahadQ')
 fig = px.scatter_mapbox(gdf,
                         lat=gdf.lat,
                         lon=gdf.lon,
